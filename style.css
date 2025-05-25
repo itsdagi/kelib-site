@@ -13,6 +13,7 @@ body{
     align-items: center;
     padding:20px;
     background-color: #536A70;
+    position: relative; /* Added for shoelace positioning */
 }
 /*nav maenu on the right as a unordered list*/
 nav{
@@ -584,4 +585,59 @@ form a{
     transform: translateX(100px);
     transition: transform 1s;
 
+}
+
+/* Shoelace Styles */
+#shoelace-1, #shoelace-2 {
+    background-color: #536A70; /* Matching navbar background for subtlety */
+    position: absolute;
+    z-index: 10;
+}
+
+#shoelace-1 {
+    top: 0px;
+    left: 10px; /* Or adjusted if needed */
+    width: 3px;
+    height: 200px; /* Increased height */
+    background-color: #536A70;
+    z-index: 10;
+    transform-origin: top left; /* Changed */
+    transform: rotate(15deg); /* Added initial rotation */
+    animation: sway-1 4s ease-in-out infinite alternate;
+}
+
+#shoelace-2 {
+    top: 0px;
+    left: 20px; /* Or adjusted if needed */
+    width: 3px;
+    height: 180px; /* Increased height */
+    background-color: #536A70;
+    z-index: 10;
+    transform-origin: top left; /* Changed */
+    transform: rotate(12deg); /* Added initial rotation */
+    animation: sway-2 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes sway-1 {
+    0% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(20deg); 
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+@keyframes sway-2 {
+    0% {
+        transform: rotate(12deg);
+    }
+    50% {
+        transform: rotate(8deg); 
+    }
+    100% {
+        transform: rotate(12deg);
+    }
 }
