@@ -87,7 +87,7 @@ p{
     background: #FAF0E6;
 }
 .header .row{
-    margin-top: 70px;
+    margin-top: 30px; /* Reduced to pull hero section up */
 }
 
 .categories{
@@ -592,10 +592,10 @@ form a{
 
 .hero-lace-image {
     display: block; /* To allow margin auto and ensure it takes its own line */
-    max-width: 100%; /* Ensure it's responsive within its container */
+    max-width: 250px; /* Changed to make image smaller */
     height: auto; /* Maintain aspect ratio */
     margin-left: auto; /* Center the image if its max-width is less than container */
     margin-right: auto; /* Center the image */
-    margin-bottom: 20px; /* Space between image and the H1 heading */
+    margin-bottom: 10px; /* Reduced for less space to text below */
     padding: 0; /* Override the generic .col-2 img padding if it applies */
 }
