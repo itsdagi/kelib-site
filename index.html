@@ -16,17 +16,18 @@
         <div class ="header">
         <div class="container">
             <div class="navbar">
+                <div id="shoelace-1"></div>
+                <div id="shoelace-2"></div>
                 <div class="logo">
                     <a href="index.html"><img src="images/logo.png" width="125px" alt="Kelib Workshop Logo"></a>
                 </div>
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="index.html">Home</a></li>
-                         <li><a href="products.html">Products</a></li>
-                         <li><a href="">About</a></li>
-                         <li><a href="">Contact</a></li>
-                         <li><a href="account.html">Account</a></li>
-
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a> </li>
+                        <li><a href="account.html">Account</a></li>
                     </ul>
                 </nav>
                 <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" alt="Shopping Cart"></a>
@@ -149,30 +150,38 @@
             
             <div class="row">
                 <div class="footer-col-1">
-                    <h3>Connect With Us</h3>
-                    <p>Stay updated with our latest handcrafted arrivals and stories.</p>
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Stores & Dealers</a></li>
+                        <li><a href="#">Company Details</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col-2">
-                    <img src="images/logo-white.png" alt="Kelib Workshop Footer Logo">
-                    <p>Our passion is crafting beautiful, durable handmade shoes with a personal touch.</p>
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
                 </div>
                 <div class="footer-col-3">
-                    <h3>Useful Links</h3>
+                    <h3>Store Policies</h3>
                    <ul>
-                       <li>Coupons</li>
-                       <li>Blog Post</li>
-                       <li>Return Policy</li>
-                       <li>Join Affiliate</li>
+                       <li><a href="#">Privacy Policy</a></li>
+                       <li><a href="#">Refund Policy</a></li>
+                       <li><a href="#">Shipping Policy</a></li>
+                       <li><a href="#">Terms of Service</a></li>
+                       <li><a href="#">Legal Notice</a></li>
                     </ul>
                 </div>
                 <div class="footer-col-4">
-                    <h3>Follow us</h3>
-                   <ul>
-                       <li>Facebook</li>
-                       <li>Twitter</li>
-                       <li>Instagram</li>
-                       <li>Youtube</li>
-                    </ul>
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="btn">Join</button>
                 </div>
                 
             </div>
@@ -229,9 +238,7 @@
                 const productHTML = `
                     <div class="col-4">
                         <a href="products-details.html?id=${product.id}"><img src="${product.imageSrc}" alt="${product.name}"></a>
-                        <a href="products-details.html?id=${product.id}"><h4>${product.name}</h4></a>
-                        <div class="rating">${generateStars(product.ratingStars)}</div>
-                        <p>$${parseFloat(product.price).toFixed(2)}</p>
+                        <a href="products-details.html?id=${product.id}" class="product-name-overlay"><h4>${product.name}</h4></a>
                     </div>`;
                 featuredRow.innerHTML += productHTML;
             });
@@ -242,9 +249,7 @@
                 const productHTML = `
                     <div class="col-4">
                         <a href="products-details.html?id=${product.id}"><img src="${product.imageSrc}" alt="${product.name}"></a>
-                        <a href="products-details.html?id=${product.id}"><h4>${product.name}</h4></a>
-                        <div class="rating">${generateStars(product.ratingStars)}</div>
-                        <p>$${parseFloat(product.price).toFixed(2)}</p>
+                        <a href="products-details.html?id=${product.id}" class="product-name-overlay"><h4>${product.name}</h4></a>
                     </div>`;
                 latestRow.innerHTML += productHTML;
             });

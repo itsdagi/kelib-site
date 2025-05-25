@@ -66,8 +66,6 @@
                     <div class="col-2">
                         <p id="product-breadcrumb">Home / Shoes</p> <!-- Added ID for breadcrumb if needed later -->
                         <h1 id="product-name">Downshifter Sports Shoes</h1> <!-- Updated ID -->
-                        <div id="product-rating"></div> <!-- Added div for rating -->
-                        <h4 id="product-price">$50.00</h4> <!-- Updated ID -->
                         <select>
                             <option>Select Size</option>
                             <option>6</option>
@@ -99,52 +97,19 @@
              <div class="row">
                      <div class="col-4">
                         <a href="products-details.html"><img src="images/product-11.jpg"></a>
-                        <a href="products-details.html"><h4>Downshifter Sports Shoes</h4></a>
-                        <div class="rating">
-                            
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$50.00</p>
+                        <a href="products-details.html" class="product-name-overlay"><h4>Downshifter Sports Shoes</h4></a>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-2.jpg"></a>
-                        <h4>Lace-Up Running Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>$35.00</p>
+                        <a href="products-details.html" class="product-name-overlay"><h4>Lace-Up Running Shoes</h4></a>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>Lace Fastening Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$15.00</p>
+                        <a href="products-details.html" class="product-name-overlay"><h4>Lace Fastening Shoes</h4></a>
                     </div>
                     <div class="col-4">
                         <a href="products-details.html"><img src="images/product-10.jpg"></a>
-                        <h4>Flat Lace-Fastening Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>$48.00</p>
+                        <a href="products-details.html" class="product-name-overlay"><h4>Flat Lace-Fastening Shoes</h4></a>
                     </div>  
                 </div>
         </div>
@@ -184,7 +149,7 @@
             </div>
             
             <hr><!--horizontal line-->
-            <p class="copyright">© 2023 Kelib Workshop. All Rights Reserved.</p>
+            <p class="copyright">© 2025 Kelib Workshop. All Rights Reserved.</p>
             
         </div>
     </div>
@@ -225,23 +190,7 @@
             const productId = new URLSearchParams(window.location.search).get('id');
             const singleProductContainer = document.getElementById('single-product-container'); 
         
-            function generateStars(rating) {
-                let starsHTML = '';
-                const fullStars = Math.floor(rating);
-                const halfStar = rating % 1 !== 0;
-                const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-        
-                for (let i = 0; i < fullStars; i++) {
-                    starsHTML += '<i class="fa fa-star"></i>';
-                }
-                if (halfStar) {
-                    starsHTML += '<i class="fa fa-star-half-o"></i>';
-                }
-                for (let i = 0; i < emptyStars; i++) {
-                    starsHTML += '<i class="fa fa-star-o"></i>';
-                }
-                return starsHTML;
-            }
+            // generateStars function removed
         
             if (productId) {
                 const product = products.find(p => p.id === parseInt(productId));
@@ -250,11 +199,11 @@
                     document.getElementById('product-image').src = product.imageSrc;
                     document.getElementById('product-image').alt = product.name;
                     document.getElementById('product-name').textContent = product.name;
-                    document.getElementById('product-price').textContent = '$' + parseFloat(product.price).toFixed(2);
+                    // document.getElementById('product-price').textContent = '$' + parseFloat(product.price).toFixed(2); // Removed
                     document.getElementById('product-description').textContent = product.description_long;
                     
-                    const ratingElement = document.getElementById('product-rating');
-                    if(ratingElement) ratingElement.innerHTML = generateStars(product.ratingStars);
+                    // const ratingElement = document.getElementById('product-rating'); // Removed
+                    // if(ratingElement) ratingElement.innerHTML = generateStars(product.ratingStars); // Removed
                     
                     document.title = product.name + " - Kelib Workshop";
         
