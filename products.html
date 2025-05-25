@@ -125,7 +125,7 @@
                 const productHTML = `
                     <div class="col-4">
                         <a href="products-details.html?id=${product.id}"><img src="${product.imageSrc}" alt="${product.name}"></a>
-                        <a href="products-details.html?id=${product.id}"><h4>${product.name}</h4></a>
+                        <a href="products-details.html?id=${product.id}" class="product-name-overlay"><h4>${product.name}</h4></a>
                     </div>`;
                 allProductsRow.innerHTML += productHTML;
             });
