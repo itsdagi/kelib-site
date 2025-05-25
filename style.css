@@ -11,6 +11,7 @@ body{
     display:flex;
     align-items: center;
     padding:20px;
+    background-color: #536A70;
 }
 /*nav maenu on the right as a unordered list*/
 nav{
@@ -25,12 +26,18 @@ nav ul{
 /*nav maenu on the right as a vertically list with 50px gapping with each with underline*/
 nav ul li{
     display: inline-block;
-    margin-right: 50px;   
+    margin-right: 30px;   
 }
 /*nav maenu on the right as a vertically list with 50px gapping with each without underline*/
 a{
     text-decoration: none;
     color: #5D4037;
+}
+nav ul li a{
+    color: #FFFFFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
 }
 p{
     color: #5D4037;
@@ -209,7 +216,7 @@ small{
 
 /*-----------------------Footer -----------------------*/
 .footer{
-    background:#4A3B31; /*black;*/
+    background:#536A70;
     color: #FDF5E6;
     font-size: 14px;
     padding:60px 0 20px;
@@ -232,7 +239,7 @@ small{
 }
 .footer-col-2{
     flex: 1;
-    text-align: center;
+    text-align: left;
 }
 .footer-col-2 img{
     width: 180px;
@@ -240,10 +247,31 @@ small{
 }
 .footer-col-3,.footer-col-4{
     flex-basis: 12%;
-    text-align: center;
+    text-align: left;
 }
 ul{
     list-style-type: none;   
+}
+
+.footer ul li a {
+    color: #FDF5E6; /* Existing footer text color */
+    text-decoration: none; /* Standard for footer links */
+}
+.footer ul li a:hover {
+    text-decoration: underline; /* Common hover effect */
+}
+
+.footer-col-4 input[type="email"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #FDF5E6; /* Light border to match text */
+    background-color: transparent; /* Transparent background */
+    color: #FDF5E6; /* Light text color */
+    width: calc(100% - 18px); /* Adjust width to fit padding and border */
+}
+
+.footer-col-4 input[type="email"]::placeholder {
+    color: #ccc; /* Lighter placeholder text */
 }
 
 .footer hr{
