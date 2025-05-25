@@ -5,6 +5,7 @@
 }
 body{
     font-family: 'Lora', serif;
+    background-color: #FBF9F6; /* Added soft background color */
 }
 /*nav maenu on the left as a unordered list*/
 .navbar{
@@ -110,13 +111,14 @@ p{
 }
 .col-4{
     flex-basis: 25%;
-    padding: 10px;
+    padding: 20px; /* Increased padding */
     min-width: 200px;
     margin-bottom: 50px;
-    transition: transform 0.5s;
-    border: 1px solid #D2B48C; /* Tan border */
-    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Soft shadow */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; /* Updated transition */
+    border: none; /* Removed border */
+    box-shadow: 5px 8px 15px rgba(165, 127, 100, 0.4); /* New shadow */
     background-color: #fff; /* Explicit white background for the card */
+    border-radius: 15px; /* Added border-radius */
 }
 .col-4 img{
     width:100%;
@@ -130,9 +132,9 @@ p{
 }
 .title::after{
     content: '';
-    background: #8B4513;
-    width: 80px;
-    height: 5px;
+    background: #A0522D; /* Changed to sienna */
+    width: 120px; /* Made wider */
+    height: 3px; /* Made thinner */
     border-radius: 5px;
     position: absolute;
     bottom: 0;
@@ -141,6 +143,7 @@ p{
 }
 h1, h2, h3, h4, h5, h6 { /* General heading color consistency */
     color: #5D4037;
+    font-family: 'Lora', serif; /* Ensured Lora font for headings */
 }
 h4{ /* Keep specific h4 styling if needed, or integrate into above */
     color: #5D4037; /* Redundant if covered by general rule but safe */
@@ -150,18 +153,13 @@ h4{ /* Keep specific h4 styling if needed, or integrate into above */
     font-size: 2.5em; /* Example size, adjust as needed */
     margin-bottom: 15px;
 }
-.col-4 p{
-    font-size: 14px;
-}
-.rating .fa{
-    color: #8B4513;
-}
 #product-rating .fa { /* Ensure stars on product details page get correct color */
     color: #8B4513;
     margin-right: 2px; /* Add a little spacing between stars */
 }
 .col-4:hover{
-    transform:translateY(-5px);
+    transform: translateY(-10px); /* More pronounced transform */
+    box-shadow: 7px 12px 20px rgba(165, 127, 100, 0.5); /* New shadow on hover */
 }
 
 /*-----------------------offer -----------------------*/

@@ -239,8 +239,6 @@
                     <div class="col-4">
                         <a href="products-details.html?id=${product.id}"><img src="${product.imageSrc}" alt="${product.name}"></a>
                         <a href="products-details.html?id=${product.id}"><h4>${product.name}</h4></a>
-                        <div class="rating">${generateStars(product.ratingStars)}</div>
-                        <p>$${parseFloat(product.price).toFixed(2)}</p>
                     </div>`;
                 featuredRow.innerHTML += productHTML;
             });
@@ -252,8 +250,6 @@
                     <div class="col-4">
                         <a href="products-details.html?id=${product.id}"><img src="${product.imageSrc}" alt="${product.name}"></a>
                         <a href="products-details.html?id=${product.id}"><h4>${product.name}</h4></a>
-                        <div class="rating">${generateStars(product.ratingStars)}</div>
-                        <p>$${parseFloat(product.price).toFixed(2)}</p>
                     </div>`;
                 latestRow.innerHTML += productHTML;
             });
