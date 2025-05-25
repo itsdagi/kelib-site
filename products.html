@@ -43,9 +43,7 @@
                 <h2>All Products</h2>
                 <select>
                     <option>Default sorting</option>
-                    <option>Short by price</option>
                     <option>Short by popularity</option>
-                    <option>Short by rating</option>
                     <option>Short by sale</option>
                 </select>
             </div>
@@ -120,23 +118,7 @@
             const allProductsRow = document.getElementById('all-products-row');
             // products array is available from index.js
 
-            function generateStars(rating) {
-                let starsHTML = '';
-                const fullStars = Math.floor(rating);
-                const halfStar = rating % 1 !== 0;
-                const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-
-                for (let i = 0; i < fullStars; i++) {
-                    starsHTML += '<i class="fa fa-star"></i>';
-                }
-                if (halfStar) {
-                    starsHTML += '<i class="fa fa-star-half-o"></i>';
-                }
-                for (let i = 0; i < emptyStars; i++) {
-                    starsHTML += '<i class="fa fa-star-o"></i>';
-                }
-                return starsHTML;
-            }
+            // generateStars function removed
 
             // Populate All Products
             products.forEach(product => {
@@ -144,8 +126,6 @@
                     <div class="col-4">
                         <a href="products-details.html?id=${product.id}"><img src="${product.imageSrc}" alt="${product.name}"></a>
                         <a href="products-details.html?id=${product.id}"><h4>${product.name}</h4></a>
-                        <div class="rating">${generateStars(product.ratingStars)}</div>
-                        <p>$${parseFloat(product.price).toFixed(2)}</p>
                     </div>`;
                 allProductsRow.innerHTML += productHTML;
             });

@@ -110,7 +110,8 @@ p{
     padding-right: 25px;   
 }
 .col-4{
-    flex-basis: 25%;
+    flex-basis: calc(25% - 20px); /* Adjusted for new margin */
+    margin: 10px; /* Added margin for spacing */
     padding: 20px; /* Increased padding */
     min-width: 200px;
     margin-bottom: 50px;
@@ -119,9 +120,12 @@ p{
     box-shadow: 5px 8px 15px rgba(165, 127, 100, 0.4); /* New shadow */
     background-color: #fff; /* Explicit white background for the card */
     border-radius: 15px; /* Added border-radius */
+    transform-style: preserve-3d; /* Added for 3D effect */
+    overflow: hidden; /* Added to contain scaled image */
 }
 .col-4 img{
     width:100%;
+    transition: transform 0.3s ease-out; /* Added for image scaling transition */
 }
 .title{
     text-align: center;
@@ -153,13 +157,13 @@ h4{ /* Keep specific h4 styling if needed, or integrate into above */
     font-size: 2.5em; /* Example size, adjust as needed */
     margin-bottom: 15px;
 }
-#product-rating .fa { /* Ensure stars on product details page get correct color */
-    color: #8B4513;
-    margin-right: 2px; /* Add a little spacing between stars */
-}
 .col-4:hover{
-    transform: translateY(-10px); /* More pronounced transform */
+    transform: perspective(1000px) rotateX(8deg) rotateY(-6deg) translateY(-10px) scale(1.03); /* Updated transform for 3D tilt and lift */
     box-shadow: 7px 12px 20px rgba(165, 127, 100, 0.5); /* New shadow on hover */
+}
+
+.col-4:hover img{
+    transform: scale(1.08); /* Image scales up on hover */
 }
 
 /*-----------------------offer -----------------------*/
@@ -384,12 +388,6 @@ select:focus{
 }
 .single-product .col-2{
     padding:20px;
-}
-.single-product h4{ /* Product price on details page */
-    margin: 20px 0;
-    font-size: 22px;
-    font-weight: bold;
-    color: #5D4037; /* Ensure price color is consistent */
 }
 .single-product select{
     display: block;
