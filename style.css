@@ -13,7 +13,6 @@ body{
     align-items: center;
     padding:20px;
     background-color: #536A70;
-    position: relative; /* Added for shoelace positioning */
 }
 /*nav maenu on the right as a unordered list*/
 nav{
@@ -358,6 +357,10 @@ ul{
     .col-2 .col-3 .col-4{
         flex-basis: 100%;
     }
+    /* Add this new rule for the hero lace image */
+    .hero-lace-image {
+        display: none;
+    }
     .single-product .row{
         text-align: left;
     }
@@ -587,57 +590,12 @@ form a{
 
 }
 
-/* Shoelace Styles */
-#shoelace-1, #shoelace-2 {
-    background-color: #536A70; /* Matching navbar background for subtlety */
-    position: absolute;
-    z-index: 10;
-}
-
-#shoelace-1 {
-    top: 0px;
-    left: 10px; /* Or adjusted if needed */
-    width: 3px;
-    height: 200px; /* Increased height */
-    background-color: #536A70;
-    z-index: 10;
-    transform-origin: top left; /* Changed */
-    transform: rotate(15deg); /* Added initial rotation */
-    animation: sway-1 4s ease-in-out infinite alternate;
-}
-
-#shoelace-2 {
-    top: 0px;
-    left: 20px; /* Or adjusted if needed */
-    width: 3px;
-    height: 180px; /* Increased height */
-    background-color: #536A70;
-    z-index: 10;
-    transform-origin: top left; /* Changed */
-    transform: rotate(12deg); /* Added initial rotation */
-    animation: sway-2 4.5s ease-in-out infinite alternate;
-}
-
-@keyframes sway-1 {
-    0% {
-        transform: rotate(15deg);
-    }
-    50% {
-        transform: rotate(20deg); 
-    }
-    100% {
-        transform: rotate(15deg);
-    }
-}
-
-@keyframes sway-2 {
-    0% {
-        transform: rotate(12deg);
-    }
-    50% {
-        transform: rotate(8deg); 
-    }
-    100% {
-        transform: rotate(12deg);
-    }
+.hero-lace-image {
+    display: block; /* To allow margin auto and ensure it takes its own line */
+    max-width: 100%; /* Ensure it's responsive within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: auto; /* Center the image if its max-width is less than container */
+    margin-right: auto; /* Center the image */
+    margin-bottom: 20px; /* Space between image and the H1 heading */
+    padding: 0; /* Override the generic .col-2 img padding if it applies */
 }
